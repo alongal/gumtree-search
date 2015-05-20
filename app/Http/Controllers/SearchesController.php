@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Search;
 use Illuminate\Http\Request;
 
 class SearchesController extends Controller {
@@ -14,7 +15,9 @@ class SearchesController extends Controller {
 	 */
 	public function index()
 	{
-		return "On Index";
+        $searches = Search::all();
+
+        return response()->json(['data' => $searches], 200);
 	}
 
 	/**
@@ -35,7 +38,13 @@ class SearchesController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $search = Search::find($id);
+
+        if (!$search) {
+            return response()->json(['message' => 'This search record does not exist'], 404);
+        }
+
+        return response()->json(['data' => $search], 200);
 	}
 
 	/**

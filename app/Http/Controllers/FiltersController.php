@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Filter;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class FiltersController extends Controller {
 	 */
 	public function index()
 	{
-		return "I'm in index";
+        $filters = Filter::all();
+
+		return response()->json(['data' => $filters], 200);
 	}
 
 	/**
@@ -35,7 +38,13 @@ class FiltersController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$filter = Filter::find($id);
+
+        if (!$filter) {
+            return response()->json(['message' => 'This filter does not exist'], 404);
+        }
+
+        return response()->json(['data' => $filter], 200);
 	}
 
 	/**
