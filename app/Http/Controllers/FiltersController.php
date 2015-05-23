@@ -89,7 +89,17 @@ class FiltersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        // Find the filter
+        $filter = Filter::find($id);
+
+        // Verify that exists
+        if (!$filter) {
+            return response()->json(['message' => 'This filter does not exists'], 404);
+        }
+
+        $filter->delete();
+
+        return response()->json(['message' => 'The filter has been deleted'], 201);
 	}
 
 }

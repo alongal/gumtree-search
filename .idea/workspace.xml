@@ -35,8 +35,8 @@
       <file leaf-file-name="FiltersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FiltersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16909622" vertical-offset="1684" max-vertical-offset="3030">
-              <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.43148687" vertical-offset="2644" max-vertical-offset="3330">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
                 <element signature="e#39#54#0#PHP" expanded="true" />
               </folding>
@@ -47,8 +47,8 @@
       <file leaf-file-name="SearchesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.214286" vertical-offset="1714" max-vertical-offset="3000">
-              <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+            <state vertical-scroll-proportion="-20.357143" vertical-offset="1440" max-vertical-offset="3300">
+              <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -81,8 +81,8 @@
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Response.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateSearchRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateFilterRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SearchesController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FiltersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SearchesController.php" />
       </list>
     </option>
   </component>
@@ -694,16 +694,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.214286" vertical-offset="1714" max-vertical-offset="3000">
-          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+        <state vertical-scroll-proportion="-20.357143" vertical-offset="1440" max-vertical-offset="3300">
+          <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FiltersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16909622" vertical-offset="1684" max-vertical-offset="3030">
-          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.43148687" vertical-offset="2644" max-vertical-offset="3330">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
             <element signature="e#39#54#0#PHP" expanded="true" />
           </folding>

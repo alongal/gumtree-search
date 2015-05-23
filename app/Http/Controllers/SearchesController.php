@@ -68,7 +68,7 @@ class SearchesController extends Controller {
 
         // Verify that exists
         if (!$search) {
-            return response()->json(['message' => 'This $search does not exists'], 404);
+            return response()->json(['message' => 'This search does not exists'], 404);
         }
 
         // Get properties
@@ -80,7 +80,7 @@ class SearchesController extends Controller {
         // Update in database
         $search->save();
 
-        return response()->json(['message' => 'The $search has been updates'], 201);
+        return response()->json(['message' => 'The search has been updates'], 201);
 	}
 
 	/**
@@ -91,7 +91,17 @@ class SearchesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        // Find the search
+        $search = Search::find($id);
+
+        // Verify that exists
+        if (!$search) {
+            return response()->json(['message' => 'This search does not exists'], 404);
+        }
+
+        $search->delete();
+
+        return response()->json(['message' => 'The search has been deleted'], 201);
 	}
 
 }
