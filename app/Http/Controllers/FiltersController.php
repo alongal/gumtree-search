@@ -2,9 +2,9 @@
 
 use App\Filter;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateFilterRequest;
+use Illuminate\Http\Response;
 
-use Illuminate\Http\Request;
 
 class FiltersController extends Controller {
 
@@ -20,14 +20,19 @@ class FiltersController extends Controller {
 		return response()->json(['data' => $filters], 200);
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param CreateFilterRequest $request
+     * @return Response
+     */
+	public function store(CreateFilterRequest $request)
 	{
-		//
+		$values = $request->only(['name']);
+
+        Filter::create($values);
+        
+        return response()->json(['message' => 'Filter correctly added'], 201);
 	}
 
 	/**
