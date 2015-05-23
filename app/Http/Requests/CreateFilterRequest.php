@@ -34,6 +34,6 @@ class CreateFilterRequest extends Request {
      */
     public function response(array $errors)
     {
-        return response()->json(['message' => 'You should specify the name for the filter'], 422);
+        return response()->json(['message' => $errors], 422);
     }
 }

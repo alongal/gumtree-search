@@ -54,15 +54,33 @@ class SearchesController extends Controller {
         return response()->json(['data' => $search], 200);
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param CreateSearchRequest $request
+     * @param  int $id
+     * @return Response
+     */
+	public function update(CreateSearchRequest $request, $id)
 	{
-		//
+        // Find the search
+        $search = Search::find($id);
+
+        // Verify that exists
+        if (!$search) {
+            return response()->json(['message' => 'This $search does not exists'], 404);
+        }
+
+        // Get properties
+        $name = $request->get('name');
+
+        // Update properties
+        $search->name = $name;
+
+        // Update in database
+        $search->save();
+
+        return response()->json(['message' => 'The $search has been updates'], 201);
 	}
 
 	/**

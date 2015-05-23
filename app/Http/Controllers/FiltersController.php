@@ -52,15 +52,33 @@ class FiltersController extends Controller {
         return response()->json(['data' => $filter], 200);
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param CreateFilterRequest $request
+     * @param  int $id
+     * @return Response
+     */
+	public function update(CreateFilterRequest $request, $id)
 	{
-		//
+        // Find the filter
+        $filter = Filter::find($id);
+
+        // Verify that exists
+        if (!$filter) {
+            return response()->json(['message' => 'This filter does not exists'], 404);
+        }
+
+        // Get properties
+        $name = $request->get('name');
+
+        // Update properties
+        $filter->name = $name;
+
+        // Update in database
+        $filter->save();
+
+        return response()->json(['message' => 'The filter has been updates'], 201);
 	}
 
 	/**

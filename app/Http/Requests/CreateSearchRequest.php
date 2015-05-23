@@ -34,7 +34,7 @@ class CreateSearchRequest extends Request {
      */
     public function response(array $errors)
     {
-        return response()->json(['message' => 'You should specify the name for the search'], 422);
+        return response()->json(['message' => $errors], 422);
     }
 
 }
