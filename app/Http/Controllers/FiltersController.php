@@ -31,7 +31,7 @@ class FiltersController extends Controller {
 		$values = $request->only(['name']);
 
         Filter::create($values);
-        
+
         return response()->json(['message' => 'Filter correctly added'], 201);
 	}
 

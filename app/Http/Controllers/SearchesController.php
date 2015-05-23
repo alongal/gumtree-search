@@ -1,10 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
+use App\Http\Requests\CreateSearchRequest;
 use App\Search;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class SearchesController extends Controller {
 
@@ -20,14 +19,22 @@ class SearchesController extends Controller {
         return response()->json(['data' => $searches], 200);
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param CreateSearchRequest $request
+     * @return Response
+     */
+	public function store(CreateSearchRequest $request)
 	{
-		//
+		// Get the request values
+        $values = $request->only(['name']);
+
+        // Add a Search name in the database
+        Search::create($values);
+
+        // Return a success response
+        return response()->json(['message' => 'Search correctly added'], 201);
 	}
 
 	/**
