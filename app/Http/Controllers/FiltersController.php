@@ -8,6 +8,11 @@ use Illuminate\Http\Response;
 
 class FiltersController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('auth.basic', ['except' => ['index', 'show']]);
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 *
