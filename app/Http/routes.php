@@ -13,4 +13,4 @@
 
 Route::resource('filters', 'FiltersController', ['except' => ['create', 'edit']]);
 Route::resource('searches', 'SearchesController', ['except' => ['create', 'edit']]);
-
+Route::resource('ads', 'AdsController', ['only' => ['index']]);
